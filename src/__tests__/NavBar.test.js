@@ -4,17 +4,16 @@ import { render, screen } from "@testing-library/react";
 import NavBar from "../components/NavBar";
 
 test("renders a <nav> element", () => {
-  const { container } = render(<NavBar />);
+  render(<NavBar />);
 
-  const nav = container.querySelector("nav");
+  const nav = screen.getByTestId("navbar");
   expect(nav).toBeInTheDocument();
 });
 
 test("renders two <a> elements inside the <nav> element", () => {
-  const { container } = render(<NavBar />);
+  render(<NavBar />);
 
-  const nav = container.querySelector("nav");
-  const anchorTags = nav.querySelectorAll("a"); // find all the child <a> elements
+  const anchorTags = screen.getAllByRole("link");
 
   expect(anchorTags).toHaveLength(2);
 });

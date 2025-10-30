@@ -3,7 +3,7 @@ import { name, city } from './../data/data.js';
 
 function Home() {
   return (
-    <div id="home">
+    <div id="home" data-testid="home">
       <h1 style={{ color: 'firebrick' }}>
         {name} is a Web Developer from {city}
       </h1>

@@ -4,9 +4,9 @@ import { name, city } from "../data/data";
 import Home from "../components/Home";
 
 test("renders a div with the correct ID", () => {
-  const { container } = render(<Home />);
+  render(<Home />);
 
-  expect(container.querySelector("#home")).toBeInTheDocument();
+  expect(screen.getByTestId("home")).toBeInTheDocument();
 });
 
 test("renders the h1 with the text 'Name is a Web Developer from City'", () => {
